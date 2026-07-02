@@ -40,7 +40,7 @@ services, the deployment gateway, and fleet device management.
 ```
                         ┌─ api.*     → WebSphere Liberty → Bun backend (NewRaBackend)
   Field tablet          ├─ s3.*      → MinIO (media)
-  (NewRaApp)  ──▶ nginx ┼─ rtc.*     → LiveKit (voice/video)
+  (RaApp)  ──▶ nginx ┼─ rtc.*     → LiveKit (voice/video)
    managed by            ├─ tiles.*   → Martin ┐
    RaMDM                 ├─ routing.* → Valhalla├─ NewRaMap
                          └─ geocode.* → Photon  ┘
