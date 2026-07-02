@@ -12,7 +12,7 @@
 
 ---
 
-We design and build **offline-first, real-time systems for the field** — mobile apps,
+We design and build **offline-first, real-time systems for the field** — web/mobile apps,
 backends, geospatial services, and the self-hosted infrastructure that runs them.
 
 Our flagship work is the **Road Accident Platform (Ra)**: an end-to-end system for
