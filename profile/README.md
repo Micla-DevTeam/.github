@@ -42,7 +42,7 @@ services, the deployment gateway, and fleet device management.
   Field tablet          ├─ s3.*      → MinIO (media)
                         ├─ sync.*    → Powersync (RaPowersync)
   (RaApp)  ──▶ nginx    ┼─ rtc.*     → LiveKit (voice/video) (RaLivekit)
-   managed by           ├─ tiles.*   → Martin ┐
+   managed by           ├─ tiles.*   → Martin  ┐
    RaMDM                ├─ routing.* → Valhalla├─ RaMaps
                         └─ geocode.* → Photon  ┘
 ```
