@@ -38,7 +38,7 @@ services, the deployment gateway, and fleet device management.
 ### How the pieces fit together
 
 ```
-                        ┌─ api.*     → WebSphere Liberty → Bun backend (NewRaBackend)
+                        ┌─ api.*     → WebSphere Liberty → Bun backend (RaBackend)
   Field tablet          ├─ s3.*      → MinIO (media)
   (RaApp)  ──▶ nginx    ┼─ rtc.*     → LiveKit (voice/video)
    managed by           ├─ tiles.*   → Martin ┐
