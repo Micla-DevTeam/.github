@@ -40,6 +40,7 @@ services, the deployment gateway, and fleet device management.
 ```
                         ┌─ api.*     → WebSphere Liberty gateway (RaGateway) → Bun backend (RaBackend)
   Field tablet          ├─ s3.*      → MinIO (media)
+                        ├─ sync.*    → Powersync (RaPowersync)
   (RaApp)  ──▶ nginx    ┼─ rtc.*     → LiveKit (voice/video) (RaLivekit)
    managed by           ├─ tiles.*   → Martin ┐
    RaMDM                ├─ routing.* → Valhalla├─ RaMaps
