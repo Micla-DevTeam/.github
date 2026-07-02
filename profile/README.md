@@ -38,13 +38,12 @@ services, the deployment gateway, and fleet device management.
 ### How the pieces fit together
 
 ```
-                        ┌─ api.*     → WebSphere Liberty → Bun backend (RaBackend)
+                        ┌─ api.*     → WebSphere Liberty gateway (RaGateway) → Bun backend (RaBackend)
   Field tablet          ├─ s3.*      → MinIO (media)
-  (RaApp)  ──▶ nginx    ┼─ rtc.*     → LiveKit (voice/video)
+  (RaApp)  ──▶ nginx    ┼─ rtc.*     → LiveKit (voice/video) (RaLivekit)
    managed by           ├─ tiles.*   → Martin ┐
-   RaMDM                ├─ routing.* → Valhalla├─ NewRaMap
+   RaMDM                ├─ routing.* → Valhalla├─ RaMaps
                         └─ geocode.* → Photon  ┘
-        (RaGateway is the single entry point for all services)
 ```
 
 ## What we care about
