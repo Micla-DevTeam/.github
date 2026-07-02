@@ -43,7 +43,7 @@ services, the deployment gateway, and fleet device management.
                         ├─ sync.*    → Powersync (RaPowersync)
   (RaApp)  ──▶ nginx    ┼─ rtc.*     → LiveKit (voice/video) (RaLivekit)
    managed by           ├─ tiles.*   → Martin  ┐
-   (RaMDM)                ├─ routing.* → Valhalla├─ Maplibre (RaMaps)
+   (RaMDM)              ├─ routing.* → Valhalla├─ Maplibre (RaMaps)
                         └─ geocode.* → Photon  ┘
 ```
 
