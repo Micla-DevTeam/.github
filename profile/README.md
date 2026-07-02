@@ -15,7 +15,7 @@
 We design and build **offline-first, real-time systems for the field** — mobile apps,
 backends, geospatial services, and the self-hosted infrastructure that runs them.
 
-Our flagship work is the **Road Accident Platform (NewRa)**: an end-to-end system for
+Our flagship work is the **Road Accident Platform (Ra)**: an end-to-end system for
 digital accident reporting and emergency-services communication, built to run reliably
 with intermittent connectivity and to satisfy public-sector deployment constraints.
 
