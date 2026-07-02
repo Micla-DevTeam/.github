@@ -40,10 +40,10 @@ services, the deployment gateway, and fleet device management.
 ```
                         ┌─ api.*     → WebSphere Liberty → Bun backend (NewRaBackend)
   Field tablet          ├─ s3.*      → MinIO (media)
-  (RaApp)  ──▶ nginx ┼─ rtc.*     → LiveKit (voice/video)
-   managed by            ├─ tiles.*   → Martin ┐
-   RaMDM                 ├─ routing.* → Valhalla├─ NewRaMap
-                         └─ geocode.* → Photon  ┘
+  (RaApp)  ──▶ nginx    ┼─ rtc.*     → LiveKit (voice/video)
+   managed by           ├─ tiles.*   → Martin ┐
+   RaMDM                ├─ routing.* → Valhalla├─ NewRaMap
+                        └─ geocode.* → Photon  ┘
         (RaGateway is the single entry point for all services)
 ```
 
