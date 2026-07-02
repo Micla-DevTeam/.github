@@ -30,9 +30,9 @@ services, the deployment gateway, and fleet device management.
 | **[RaBackend](https://github.com/Micla-DevTeam/NewRaBackend)** | The cloud backend — REST API, media storage (MinIO), and the core domain services. | Bun · Fastify · TypeBox · PostgreSQL |
 | **[RaLiveKit](https://github.com/Micla-DevTeam/RaLiveKit)** | Self-hosted real-time voice/video (WebRTC) service powering in-app calls and emergency coordination. | LiveKit · WebRTC · Docker |
 | **[RaPowerSync](https://github.com/Micla-DevTeam/RaPowerSync)** | The offline-first sync service that keeps field tablets and the backend database in sync. | PowerSync · PostgreSQL · Docker |
-| **[RaGateway](https://github.com/Micla-DevTeam/NewRaGateway)** | The platform front door — nginx web tier + WebSphere Liberty application-server hop, host-based routing to every service. | nginx · WebSphere Liberty · Docker Compose |
-| **[RaMaps](https://github.com/Micla-DevTeam/NewRaMap)** | Shared geospatial stack: vector tiles, routing, and geocoding for Tunisia, Morocco & Italy. | Martin · Valhalla · Photon |
-| **[RaDocs](https://github.com/Micla-DevTeam/NewRaDocs)** | The multilingual (EN · FR · AR · IT) technical documentation portal for the platform. | Zensical (Material for MkDocs successor) |
+| **[RaGateway](https://github.com/Micla-DevTeam/RaGateway)** | The platform front door — nginx web tier + WebSphere Liberty application-server hop, host-based routing to every service. | nginx · WebSphere Liberty · Docker Compose |
+| **[RaMaps](https://github.com/Micla-DevTeam/RaMaps)** | Shared geospatial stack: vector tiles, routing, and geocoding for Tunisia, Morocco & Italy. | Martin · Valhalla · Photon |
+| **[RaDocs](https://github.com/Micla-DevTeam/RaDocs)** | The multilingual (EN · FR · AR · IT) technical documentation portal for the platform. | Zensical (Material for MkDocs successor) |
 | **[RaMDM](https://github.com/Micla-DevTeam/RaMDM)** | Self-hosted Mobile Device Management to provision and remotely manage the fleet of field tablets. | Headwind MDM · Tomcat · PostgreSQL · Docker |
 
 ### How the pieces fit together
