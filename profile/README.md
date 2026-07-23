@@ -28,15 +28,50 @@ environments.
 
 ## Tech we work with
 
+**Languages**
+
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
+![Shell](https://img.shields.io/badge/Shell-4EAA25?logo=gnubash&logoColor=white)
+
+**Frameworks & platforms**
+
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-000000?logo=bun&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Fastify](https://img.shields.io/badge/Fastify-000000?logo=fastify&logoColor=white)
+![TypeBox](https://img.shields.io/badge/TypeBox-3178C6)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?logo=socketdotio&logoColor=white)
+![Tomcat](https://img.shields.io/badge/Tomcat-F8DC75?logo=apachetomcat&logoColor=black)
+![MkDocs](https://img.shields.io/badge/MkDocs-526CFE?logo=materialformkdocs&logoColor=white)
+
+**Data & sync**
+
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![PowerSync](https://img.shields.io/badge/PowerSync-4F46E5)
+![SQLCipher](https://img.shields.io/badge/SQLCipher-003B57?logo=sqlite&logoColor=white)
+![MinIO](https://img.shields.io/badge/MinIO-C72E49?logo=minio&logoColor=white)
+
+**Real-time & media**
+
+![LiveKit](https://img.shields.io/badge/LiveKit-00B3A4)
+![WebRTC](https://img.shields.io/badge/WebRTC-333333?logo=webrtc&logoColor=white)
+
+**Geospatial**
+
+![MapLibre](https://img.shields.io/badge/MapLibre-295DAA?logo=maplibre&logoColor=white)
+![Martin](https://img.shields.io/badge/Martin-2E7D32)
+![Valhalla](https://img.shields.io/badge/Valhalla-6A1B9A)
+![Photon](https://img.shields.io/badge/Photon-00838F)
+
+**Infrastructure & ops**
+
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![nginx](https://img.shields.io/badge/nginx-009639?logo=nginx&logoColor=white)
-![LiveKit](https://img.shields.io/badge/LiveKit-00B3A4)
-![MapLibre](https://img.shields.io/badge/MapLibre-295DAA?logo=maplibre&logoColor=white)
+![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?logo=digitalocean&logoColor=white)
+![IBM Cloud](https://img.shields.io/badge/IBM-052FAD?logo=ibm&logoColor=white)
 
 ---
 
