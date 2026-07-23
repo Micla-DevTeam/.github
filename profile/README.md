@@ -12,47 +12,19 @@
 
 ---
 
-We design and build **offline-first, real-time systems for the field** — web/mobile apps,
-backends, geospatial services, and the self-hosted infrastructure that runs them.
+We design and build **offline-first, real-time systems for the field** — web and mobile
+apps, backends, geospatial services, and the self-hosted infrastructure that runs them.
 
-Our flagship work is the **Road Accident Platform (Ra)**: an end-to-end system for
-digital accident reporting and emergency-services communication, built to run reliably
-with intermittent connectivity and to satisfy public-sector deployment constraints.
-
-## The Road Accident Platform
-
-A complete suite spanning the tablet in the field, the cloud backend, the geospatial
-services, the deployment gateway, and fleet device management.
-
-| Repository | What it is | Built with |
-| --- | --- | --- |
-| **[RaApp](https://github.com/Micla-DevTeam/NewRaApp)** | Android app for field accident reporting & emergency VoIP/messaging. Offline-first, encrypted local storage. | Kotlin · Jetpack Compose · Clean Architecture · LiveKit · Socket.IO · PowerSync · SQLCipher · MapLibre |
-| **[RaBackend](https://github.com/Micla-DevTeam/NewRaBackend)** | The cloud backend — REST API, media storage (MinIO), and the core domain services. | Bun · Fastify · TypeBox · PostgreSQL |
-| **[RaLiveKit](https://github.com/Micla-DevTeam/RaLiveKit)** | Self-hosted real-time voice/video (WebRTC) service powering in-app calls and emergency coordination. | LiveKit · WebRTC · Docker |
-| **[RaPowerSync](https://github.com/Micla-DevTeam/RaPowerSync)** | The offline-first sync service that keeps field tablets and the backend database in sync. | PowerSync · PostgreSQL · Docker |
-| **[RaGateway](https://github.com/Micla-DevTeam/RaGateway)** | The platform front door — nginx web tier + WebSphere Liberty application-server hop, host-based routing to every service. | nginx · WebSphere Liberty · Docker Compose |
-| **[RaMaps](https://github.com/Micla-DevTeam/RaMaps)** | Shared geospatial stack: vector tiles, routing, and geocoding for Tunisia, Morocco & Italy. | Martin · Valhalla · Photon |
-| **[RaDocs](https://github.com/Micla-DevTeam/RaDocs)** | The multilingual (EN · FR · AR · IT) technical documentation portal for the platform. | Zensical (Material for MkDocs successor) |
-| **[RaMDM](https://github.com/Micla-DevTeam/RaMDM)** | Self-hosted Mobile Device Management to provision and remotely manage the fleet of field tablets. | Headwind MDM · Tomcat · PostgreSQL · Docker |
-
-### How the pieces fit together
-
-```
-                        ┌─ api.*     → WebSphere Liberty gateway (RaGateway) → Bun backend (RaBackend)
-  Field tablet          ├─ s3.*      → MinIO (media)
-                        ├─ sync.*    → Powersync (RaPowersync)
-  (RaApp)  ──▶ nginx    ┼─ rtc.*     → LiveKit (voice/video) (RaLivekit)
-   managed by           ├─ tiles.*   → Martin  ┐
-   (RaMDM)              ├─ routing.* → Valhalla├─ Maplibre (RaMaps)
-                        └─ geocode.* → Photon  ┘
-```
+We work end to end: from the device in someone's hands, to the cloud backend, to the
+deployment and fleet-management layers that keep it all running reliably in demanding
+environments.
 
 ## What we care about
 
-- **Offline-first** — the field has no guarantee of connectivity, so the app works fully offline and syncs when it can.
-- **Real-time** — live voice, video, and messaging for emergency coordination.
-- **Self-hosted & sovereign** — the whole stack runs on infrastructure we control, with encryption end to end.
-- **Deployable under real constraints** — including public-sector requirements such as running on IBM WebSphere Application Server.
+- **Offline-first** — connectivity isn't guaranteed in the field, so our apps work fully offline and sync when they can.
+- **Real-time** — live voice, video, and messaging for time-critical coordination.
+- **Self-hosted & sovereign** — our stacks run on infrastructure we control, with strong encryption throughout.
+- **Deployable under real constraints** — built to satisfy demanding operational and enterprise deployment requirements.
 
 ## Tech we work with
 
