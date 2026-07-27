@@ -1,7 +1,7 @@
 <h1 align="center">Micla&nbsp;DevTeam</h1>
 
 <p align="center">
-  <em>The software engineering team of <strong>Micla Design&nbsp;&amp;&nbsp;Engineering</strong></em>
+  <em>The software engineering team of <strong>Micla Engineering&nbsp;&amp;&nbsp;Design</strong></em>
 </p>
 
 <p align="center">
@@ -76,5 +76,5 @@ environments.
 ---
 
 <p align="center">
-  <sub>Micla&nbsp;DevTeam · part of <strong>Micla Design&nbsp;&amp;&nbsp;Engineering</strong></sub>
+  <sub>Micla&nbsp;DevTeam · part of <strong>Micla Engineering&nbsp;&amp;&nbsp;Design</strong></sub>
 </p>
