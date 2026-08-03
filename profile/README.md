@@ -29,7 +29,7 @@ management.
 |---|---|---|
 | [RaApp](https://github.com/Micla-DevTeam/RaApp) | Android app for field accident reporting & emergency VoIP/messaging. Offline-first, encrypted local storage. | Kotlin · Jetpack Compose · Clean Architecture · LiveKit · Socket.IO · PowerSync · SQLCipher · MapLibre |
 | [RaFrontend](https://github.com/Micla-DevTeam/RaFrontend) | The web dashboard for dispatch — incident management, live map, reporting, chat, and voice/video calling for officers. | React · TypeScript · Redux Toolkit · MUI · Socket.IO · LiveKit · MapLibre |
-| [RaBackend](https://github.com/Micla-DevTeam/RaApi) | The cloud backend — REST API, media storage (MinIO), and the core domain services. | Bun · Fastify · TypeBox · PostgreSQL |
+| [RaApi](https://github.com/Micla-DevTeam/RaApi) | The cloud backend — REST API, media storage (MinIO), and the core domain services. | Bun · Fastify · TypeBox · PostgreSQL |
 | [RaLiveKit](https://github.com/Micla-DevTeam/RaLiveKit) | Self-hosted real-time voice/video (WebRTC) service powering in-app calls and emergency coordination. | LiveKit · WebRTC · Docker |
 | [RaPowerSync](https://github.com/Micla-DevTeam/RaPowersync) | The offline-first sync service that keeps field tablets and the backend database in sync. | PowerSync · PostgreSQL · Docker |
 | [RaGateway](https://github.com/Micla-DevTeam/RaGateway) | The platform front door — nginx web tier + WebSphere Liberty application-server hop, host-based routing to every service. | nginx · WebSphere Liberty · Docker Compose |
