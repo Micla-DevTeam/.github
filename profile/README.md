@@ -6,56 +6,60 @@
 
 <p align="center">
   <img alt="Platform" src="https://img.shields.io/badge/platform-Android%20%7C%20Web%20%7C%20Cloud-3DDC84">
-  <img alt="Stack" src="https://img.shields.io/badge/stack-Kotlin%20%C2%B7%20Bun%20%C2%B7%20Docker-blue">
+  <img alt="Stack" src="https://img.shields.io/badge/stack-Kotlin%20%C2%B7%20TypeScript%20%C2%B7%20Docker-blue">
   <img alt="Focus" src="https://img.shields.io/badge/focus-offline--first%20%C2%B7%20real--time-4F46E5">
+  <img alt="Repositories" src="https://img.shields.io/badge/repositories-private-lightgrey">
 </p>
 
 ---
 
-We design and build **offline-first, real-time systems for the field** — web/mobile
-apps, backends, geospatial services, and the self-hosted infrastructure that runs them.
+We design and build **offline-first, real-time systems for the field** — mobile and web
+applications, backends, geospatial services, and the self-hosted infrastructure that runs
+them.
 
-Our flagship work is the **Road Accident Platform (Ra)**: an end-to-end system for
-digital accident reporting and emergency-services communication, built to run reliably
-with intermittent connectivity and to satisfy public-sector deployment constraints.
+Most of our work is built for environments where connectivity is unreliable and
+deployment constraints are real: field teams working away from the network, operations
+staff who need live coordination, and organisations that need to keep their data on
+infrastructure they control.
 
-## The Road Accident Platform
+> **Note:** our repositories are private. This profile is an overview of what we build and
+> the technologies we work with. For access, demos, or collaboration, get in touch.
 
-A complete suite spanning the tablet in the field, the web dashboard for dispatch, the
-cloud backend, the geospatial services, the deployment gateway, and fleet device
-management.
+## What we build
 
-| Repository | What it is | Built with |
-|---|---|---|
-| [RaApp](https://github.com/Micla-DevTeam/RaApp) | Android app for field accident reporting & emergency VoIP/messaging. Offline-first, encrypted local storage. | Kotlin · Jetpack Compose · Clean Architecture · LiveKit · Socket.IO · PowerSync · SQLCipher · MapLibre |
-| [RaFrontend](https://github.com/Micla-DevTeam/RaFrontend) | The web dashboard for dispatch — incident management, live map, reporting, chat, and voice/video calling for officers. | React · TypeScript · Redux Toolkit · MUI · Socket.IO · LiveKit · MapLibre |
-| [RaApi](https://github.com/Micla-DevTeam/RaApi) | The cloud backend — REST API, media storage (MinIO), and the core domain services. | Bun · Fastify · TypeBox · PostgreSQL |
-| [RaLiveKit](https://github.com/Micla-DevTeam/RaLiveKit) | Self-hosted real-time voice/video (WebRTC) service powering in-app calls and emergency coordination. | LiveKit · WebRTC · Docker |
-| [RaPowerSync](https://github.com/Micla-DevTeam/RaPowersync) | The offline-first sync service that keeps field tablets and the backend database in sync. | PowerSync · PostgreSQL · Docker |
-| [RaGateway](https://github.com/Micla-DevTeam/RaGateway) | The platform front door — nginx web tier + WebSphere Liberty application-server hop, host-based routing to every service. | nginx · WebSphere Liberty · Docker Compose |
-| [RaMaps](https://github.com/Micla-DevTeam/RaMaps) | Shared geospatial stack: vector tiles, routing, and geocoding for Tunisia. | Martin · Valhalla · Photon |
-| [RaDocs](https://github.com/Micla-DevTeam/RaDocs) | The multilingual (EN · FR · AR · IT) technical documentation portal for the platform. | Zensical (Material for MkDocs successor) |
-| [RaMDM](https://github.com/Micla-DevTeam/RaMDM) | Self-hosted Mobile Device Management to provision and remotely manage the fleet of field tablets. | Headwind MDM · Tomcat · PostgreSQL · Docker |
+| Area | What it means in practice |
+|---|---|
+| **Mobile applications** | Native Android apps for field data capture, built offline-first with encrypted local storage and background sync. |
+| **Web dashboards** | Operations and dispatch interfaces — live maps, case management, reporting, messaging, and in-browser voice/video. |
+| **Backend services** | REST APIs, domain services, object storage, and the data model behind them. |
+| **Real-time communication** | Self-hosted WebRTC voice/video and messaging for live coordination between field and operations. |
+| **Offline sync** | Bidirectional sync between local device databases and the central database, resilient to long offline periods. |
+| **Geospatial services** | Self-hosted vector tiles, routing, and geocoding, with map rendering on both web and mobile. |
+| **Infrastructure & gateways** | Containerised deployments, reverse proxies, host-based routing, and application-server integration for enterprise environments. |
+| **Device management** | Self-hosted MDM to provision, lock down, and remotely manage fleets of field devices. |
+| **Documentation** | Multilingual technical documentation portals (EN · FR · AR · IT) alongside the systems they describe. |
 
-### How the pieces fit together
+## How we put systems together
+
+A typical deployment of ours looks like this: field devices and a web client sit behind a
+single reverse proxy, which routes by hostname to the individual services — API, media
+storage, sync, real-time media, and the geospatial stack — each running in its own
+container on infrastructure we manage.
 
 ```
-  Field tablet (RaApp)   ─┐
-   managed by (RaMDM)     │                ┌─ api.*     → WebSphere Liberty gateway (RaGateway) → Bun backend (RaApi)
-                          ├─▶ nginx ────── ├─ s3.*      → MinIO (media)
-  Web app (RaFrontend)   ─┘                ├─ sync.*    → PowerSync (RaPowerSync)
-                                           ┼─ rtc.*     → LiveKit (voice/video) (RaLiveKit)
-                                           ├─ tiles.*   → Martin   ┐
-                                           ├─ routing.* → Valhalla ├─ MapLibre (RaMaps)
-                                           └─ geocode.* → Photon   ┘
+  Field devices  ─┐                ┌─ api      → application services
+                  ├─▶ reverse ──── ├─ storage  → object storage (media)
+  Web client     ─┘     proxy      ├─ sync     → offline sync service
+                                   ├─ rtc      → real-time voice/video
+                                   └─ geo      → tiles · routing · geocoding
 ```
 
 ## What we care about
 
-- **Offline-first** — the field has no guarantee of connectivity, so the app works fully offline and syncs when it can.
-- **Real-time** — live voice, video, and messaging for emergency coordination.
-- **Self-hosted & sovereign** — the whole stack runs on infrastructure we control, with encryption end to end.
-- **Deployable under real constraints** — including public-sector requirements such as running on IBM WebSphere Application Server.
+- **Offline-first** — the field has no guarantee of connectivity, so applications work fully offline and sync when they can.
+- **Real-time** — live voice, video, and messaging where coordination can't wait.
+- **Self-hosted & sovereign** — the whole stack can run on infrastructure the client controls, encrypted end to end.
+- **Deployable under real constraints** — including enterprise and public-sector requirements around application servers, hosting, and data residency.
 
 ## Tech we work with
 
@@ -77,7 +81,6 @@ management.
 ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-000000?logo=bun&logoColor=white)
 ![Fastify](https://img.shields.io/badge/Fastify-000000?logo=fastify&logoColor=white)
-![TypeBox](https://img.shields.io/badge/TypeBox-3178C6)
 ![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?logo=socketdotio&logoColor=white)
 ![Tomcat](https://img.shields.io/badge/Tomcat-F8DC75?logo=apachetomcat&logoColor=black)
 ![MkDocs](https://img.shields.io/badge/MkDocs-526CFE?logo=materialformkdocs&logoColor=white)
